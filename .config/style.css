@@ -1,0 +1,93 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", "Roboto", "Helvetica";
+    font-size: 14px;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background: #111111; /* Solid dark background */
+    color: #ffffff;
+    border-bottom: 2px solid #222222;
+}
+
+/* Round Workspaces */
+#workspaces {
+    margin-left: 8px;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    color: #555555;
+    background: transparent;
+}
+
+#workspaces button.focused {
+    color: #ffffff;
+}
+
+#workspaces button.urgent {
+    color: #ff5555;
+}
+
+/* Center Clock */
+#clock {
+    font-weight: bold;
+    color: #eeeeee;
+}
+
+/* Right Side Modules */
+#network, #bluetooth, #custom-notification {
+    padding: 0 12px;
+    margin: 5px 0;
+    transition: all 0.2s ease;
+}
+
+#network { color: #88cc88; }
+#bluetooth { color: #88aaee; }
+#custom-notification { 
+    color: #eeaa88; 
+    margin-right: 10px;
+}
+
+#network:hover, #bluetooth:hover, #custom-notification:hover {
+    background: #222222;
+    border-radius: 4px;
+}
+#battery {
+    padding: 0 10px;
+    color: #f9e2af; /* Yellowish/Gold */
+}
+
+#battery.charging, #battery.plugged {
+    color: #a6e3a1; /* Green */
+}
+
+#battery.warning:not(.charging) {
+    color: #fab387; /* Orange */
+}
+
+#battery.critical:not(.charging) {
+    color: #f38ba8; /* Red */
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#pulseaudio {
+    padding: 0 10px;
+    color: #cba6f7; /* Soft Purple */
+}
+
+#pulseaudio.muted {
+    color: #f38ba8; /* Red when muted */
+}
+
+@keyframes blink {
+    to {
+        background-color: #f38ba8;
+        color: #111111;
+    }
+}
